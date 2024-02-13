@@ -1,0 +1,53 @@
+{
+ "name": "electron-react-to-print-demo",
+ "productName": "Electron react-to-print demo",
+ "version": "1.0.0",
+ "description": "Electron App demoing react-to-print library use",
+ "author": "Onkar Ruikar",
+ "homepage": "https://github.com/onkarruikar/electron-react-to-print-demo",
+ "repository": {
+  "type": "git",
+  "url": "https://github.com/onkarruikar/electron-react-to-print-demo.git"
+ },
+ "contributors": [
+  "Onkar Ruikar <https://github.com/onkarruikar>"
+ ],
+ "license": "MIT",
+ "engines": {
+  "node": ">=14.17"
+ },
+ "main": "main.js",
+ "scripts": {
+  "dev": "concurrently -k \"npm run runServer \" \"npm run runElectron\"",
+  "runServer": "webpack-dev-server --hot --host 0.0.0.0 --port 4000 --config=./webpack.dev.config.js",
+  "runElectron": "wait-on tcp:4000 && electron ."
+ },
+ "devDependencies": {
+  "@babel/core": "^7.18.13",
+  "@babel/preset-env": "^7.18.10",
+  "@babel/preset-react": "^7.18.6",
+  "babel-loader": "^8.2.5",
+  "concurrently": "^7.3.0",
+  "css-loader": "6.7.1",
+  "electron": "^20.1.1",
+  "electron-packager": "^16.0.0",
+  "file-loader": "^6.2.0",
+  "html-webpack-plugin": "^5.5.0",
+  "mini-css-extract-plugin": "^2.6.1",
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+  "react-to-print": "^2.14.7",
+  "style-loader": "^3.3.1",
+  "terser-webpack-plugin": "^5.3.6",
+  "wait-on": "^6.0.1",
+  "webpack": "^5.74.0",
+  "webpack-cli": "^4.10.0",
+  "webpack-dev-server": "^4.10.1"
+ },
+ "babel": {
+  "presets": [
+   "@babel/preset-env",
+   "@babel/preset-react"
+  ]
+ }
+}
